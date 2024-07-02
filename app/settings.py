@@ -1,0 +1,21 @@
+import os
+
+from dotenv import load_dotenv
+
+
+load_dotenv()
+
+STEAM_WEB_API_KEY = os.getenv('STEAM_WEB_API_KEY')
+STEAM_WEB_API_REDIRECT_LINK = os.getenv('STEAM_WEB_API_REDIRECT_LINK')
+
+POSTGRES_NAME = os.getenv('POSTGRES_NAME')
+POSTGRES_USER = os.getenv('POSTGRES_USER')
+POSTGRES_PASSWORD = os.getenv('POSTGRES_PASSWORD')
+POSTGRES_HOST = os.getenv('POSTGRES_HOST')
+POSTGRES_PORT = os.getenv('POSTGRES_PORT')
+
+POSTGRES_FULL_URL = (
+    f'postgresql+asyncpg://'
+    f'{POSTGRES_USER}:{POSTGRES_PASSWORD}@'
+    f'{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_NAME}'
+)
